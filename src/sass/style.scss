@@ -1,0 +1,70 @@
+
+// font & font_size
+
+$font-Amatic: 'Amatic SC', cursive;
+$font-Press_Start: 'Press Start 2P', cursive;
+
+// color 
+
+$text-white: #fff;
+$text-black: #000;
+
+$bg-color: #fff;
+
+// settings
+
+html {
+    font-size: 10px;
+}
+
+body {
+	margin: 0;
+     font-family: $font-Press_Start;
+     font-size: 1.5rem;
+     color: $text-black;
+     background-color: $bg-color;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+a {  
+     color: none;
+     text-decoration: none;
+}
+
+p {
+	margin: 0;
+}
+
+// conatainer
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+
+                         /* ========header======== */
+
+.header {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-top: 5rem;
+
+     &__title {
+          margin-left: 1rem;
+          font-size: 2rem;
+     }
+}
+
+
