@@ -101,6 +101,7 @@ p {
      flex-direction: column;
      border: 2px solid $green_bg-color;
      border-top: none;
+     border-bottom: none;
 
 // left_side
      &__left {
@@ -143,6 +144,42 @@ p {
                img {
                     cursor: pointer;
                }
+          }
+     }
+}
+
+                         /* ========footer======== */
+
+.footer {
+     display: flex;
+     justify-content: center;
+     border: 2px solid $green_bg-color;
+     border-top: none;
+     padding-top: 2rem;
+     padding-bottom: 2rem;
+
+     .footer__save {
+          margin-right: 2rem;
+          padding: 1rem 3rem;
+          border: 2px solid $green_bg-color;
+          font-family: $font-Press_Start;
+          font-size: 2rem;
+          cursor: pointer;
+
+          &:hover {
+               background-color: $green_bg-color;
+          }
+     }
+
+     .footer__clear {
+          padding: 1rem 3rem;
+          border: 2px solid $green_bg-color;
+          font-family: $font-Press_Start;
+          font-size: 2rem;
+          cursor: pointer;
+
+          &:hover {
+               background-color: $green_bg-color;
           }
      }
 }
