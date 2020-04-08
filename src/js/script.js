@@ -22,16 +22,17 @@ const input = document.querySelector('.enter__input'),
           caseText.classList.add('case__text');
 
           // create input value
-          let newInput = input.value;
-          caseText.append(newInput);
+          caseText.append(input.value);
 
-          ul.appendChild(li).append(caseText);
+          // add create elem in document
+          ul.appendChild(li);
+          li.append(caseText);
           
           // if input = nothing
           if (input.value == '') {
                return alert('complete add');
           } else {
-               return input.value
+               return input.value;
           };
      };
 
