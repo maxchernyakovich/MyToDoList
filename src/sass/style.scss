@@ -101,6 +101,7 @@ p {
           width: 20%;
           padding: 2.1rem 0;
           border: 2px solid $green_bg-color;
+          background-color: $white_bg-color;
           font-family: $font-Press_Start;
           font-size: 2rem;
           cursor: pointer;
@@ -161,9 +162,36 @@ p {
                margin-bottom: 1rem;
                margin-left: .5rem;
 
-               img {
-                    cursor: pointer;
+               span {
+                    display: flex;
+                    justify-content: center;
+
+                    button {
+                         margin-right: .2rem;
+                         background-color: $white_bg-color;
+                         border: none;
+
+                         .icon__commit {
+                              padding: 1rem;
+                              background-image: url(../img/forum.svg);
+                              cursor: pointer;
+                         }
+
+                         .icon__done {
+                              padding: 1rem;
+                              background-image: url(../img/done.svg);
+                              cursor: pointer;
+                         }
+
+                         .icon__delete {
+                              padding: 1rem;
+                              background-image: url(../img/clear.svg);
+                              cursor: pointer;
+                         }
+                    }
                }
+
+               
           }
      }
 }

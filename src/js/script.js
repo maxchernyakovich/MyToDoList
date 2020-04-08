@@ -24,9 +24,32 @@ const input = document.querySelector('.enter__input'),
           // create input value
           caseText.append(input.value);
 
+          // create btn in caseList
+          let span = document.createElement('span'),
+               btnCommit = document.createElement('button'),
+               btnDone = document.createElement('button'),
+               btnDelete = document.createElement('button');
+
+          // create img in btn 
+          let iconCommit = document.createElement('img');
+              iconCommit.classList.add('icon__commit');
+          let iconDone = document.createElement('img');
+              iconDone.classList.add('icon__done');
+          let iconDelete = document.createElement('img');
+              iconDelete.classList.add('icon__delete');
+          
+
           // add create elem in document
           ul.appendChild(li);
-          li.append(caseText);
+          li.prepend(caseText);
+          li.append(span);
+          span.prepend(btnCommit);
+          btnCommit.append(iconCommit);
+          span.append(btnDone);
+          btnDone.append(iconDone);
+          span.append(btnDelete);
+          btnDelete.append(iconDelete);
+          
           
           // if input = nothing
           if (input.value == '') {
