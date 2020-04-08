@@ -74,14 +74,18 @@ p {
                          /* ========enter======== */
 
 .enter {
+     display: flex;
+     justify-content: left;
+     align-items: center;
+     border: 2px solid $green_bg-color;
 
      &__input {
-          width: 100%;
-          padding: 1.5rem;
+          width: 80%;
+          padding: 2.1rem;
           font-family: $font-Press_Start;
-          font-size: 1.5rem;
-          color: $text-black;
+          font-size: 2rem;
           border: 2px solid $green_bg-color;
+          color: $text-black;
           text-align: center;
 
           &::placeholder {
@@ -92,6 +96,22 @@ p {
                text-align: center;
           }
      }
+
+     &__btn {
+          width: 20%;
+          padding: 2.1rem 0;
+          border: 2px solid $green_bg-color;
+          font-family: $font-Press_Start;
+          font-size: 2rem;
+          cursor: pointer;
+          
+          &:hover {
+               background-color: $green_bg-color;
+               border: 1px solid $white_bg-color;
+               color: $text-white;
+          }          
+     }
+
 }
 
                          /* ========list======== */
@@ -148,9 +168,9 @@ p {
      }
 }
 
-                         /* ========footer======== */
+                         /* ========btn======== */
 
-.footer {
+.btn {
      display: flex;
      justify-content: center;
      border: 2px solid $green_bg-color;
@@ -158,7 +178,7 @@ p {
      padding-top: 2rem;
      padding-bottom: 2rem;
 
-     .footer__save {
+     .btn__save {
           margin-right: 2rem;
           padding: 1rem 3rem;
           border: 2px solid $green_bg-color;
@@ -168,10 +188,11 @@ p {
 
           &:hover {
                background-color: $green_bg-color;
+               color: $text-white;
           }
      }
 
-     .footer__clear {
+     .btn__clear {
           padding: 1rem 3rem;
           border: 2px solid $green_bg-color;
           font-family: $font-Press_Start;
@@ -180,6 +201,7 @@ p {
 
           &:hover {
                background-color: $green_bg-color;
+               color: $text-white;
           }
      }
 }
