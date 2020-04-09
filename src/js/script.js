@@ -49,14 +49,14 @@ const input = document.querySelector('.enter__input'),
           btnDone.append(iconDone);
           span.append(btnDelete);
           btnDelete.append(iconDelete);
-          
+          input.value = '';
           
           // if input = nothing
-          if (input.value == '') {
+          /* if (input.value == '') {
                return alert('complete add');
           } else {
                return input.value;
-          };
+          }; */
      };
 
      // click event for btn
