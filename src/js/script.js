@@ -5,7 +5,8 @@
 
 // variables
 const input = document.querySelector('.enter__input'),
-      ul = document.querySelector('.list__case'),
+      ulCase = document.querySelector('.list__case'),
+      ulDone = document.querySelector('.done'),
       btnAdd = document.querySelector('.enter__btn'),
       btnSave = document.querySelector('.btn__save'),
       btnClear = document.querySelector('.btn__clear');
@@ -28,7 +29,8 @@ const input = document.querySelector('.enter__input'),
           let span = document.createElement('span'),
                btnCommit = document.createElement('button'),
                btnDone = document.createElement('button'),
-               btnDelete = document.createElement('button');
+               btnDelete = document.createElement('button'),
+               btnRenew = document.createElement('button');
 
           // create img in btn 
           let iconCommit = document.createElement('img');
@@ -37,10 +39,11 @@ const input = document.querySelector('.enter__input'),
               iconDone.classList.add('icon__done');
           let iconDelete = document.createElement('img');
               iconDelete.classList.add('icon__delete');
+          let iconRenew = document.createElement('img');
+              iconRenew.classList.add('icon__renew');
           
-
           // add create elem in document
-          ul.appendChild(li);
+          ulCase.appendChild(li);
           li.prepend(caseText);
           li.append(span);
           span.prepend(btnCommit);
@@ -51,12 +54,37 @@ const input = document.querySelector('.enter__input'),
           btnDelete.append(iconDelete);
           input.value = '';
           
-          // if input = nothing
-          /* if (input.value == '') {
+          /* // if input = nothing
+          if (input.value == '') {
                return alert('complete add');
           } else {
                return input.value;
           }; */
+
+          // click btn delete
+          function deleteCase() {
+               li.remove();
+          };
+
+          //click btn done
+          function doneCase() {
+               // clone li
+               let cloneCase = li.cloneNode(true),
+                   btn = cloneCase.querySelector('.icon__done');
+               
+               // delete li in case list
+               li.remove();
+
+               // add case in done list
+               ulDone.appendChild(cloneCase);
+
+               // replace elem in btn
+               btn.replaceWith(iconRenew);
+          };
+          
+          btnDone.addEventListener('click', doneCase);
+          btnDelete.addEventListener('click', deleteCase);
+
      };
 
      // click event for btn
