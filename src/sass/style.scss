@@ -200,6 +200,58 @@ p {
                
           }
      }
+
+          &__done {
+          list-style-type: none;
+          padding: 0;
+          color: $text-black;
+          text-align: center;
+
+          &--item {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               margin-bottom: 1rem;
+               margin-left: .5rem;
+
+               span {
+                    display: flex;
+                    justify-content: center;
+
+                    button {
+                         margin-right: .2rem;
+                         background-color: $white_bg-color;
+                         border: none;
+
+                         .icon__commit {
+                              padding: 1rem;
+                              background-image: url(../img/forum.svg);
+                              cursor: pointer;
+                         }
+
+                         .icon__done {
+                              padding: 1rem;
+                              background-image: url(../img/done.svg);
+                              cursor: pointer;
+                         }
+
+                         .icon__delete {
+                              padding: 1rem;
+                              background-image: url(../img/clear.svg);
+                              cursor: pointer;
+                         }
+
+                         .icon__renew {
+                              padding: 1rem;
+                              background-image: url(../img/autorenew.svg);
+                              cursor: pointer;
+                         }
+                    }
+               }
+
+               
+          }
+     }
 }
 
                          /* ========btn======== */
