@@ -67,6 +67,8 @@ const input = document.querySelector('.enter__input'),
           };
           btnDelete.addEventListener('click', deleteCase);
 
+          console.log(btnDelete);
+
           //click btn done
           function doneCase() {
 
@@ -91,6 +93,8 @@ const input = document.querySelector('.enter__input'),
 
                //found create btn delete when clone
                let btnDeleteDone = ulDone.querySelectorAll('button')[2];
+              
+               console.log(btnDeleteDone);
 
                // click event for delete btn
                btnDeleteDone.addEventListener('click', DeleteDone);
@@ -98,9 +102,6 @@ const input = document.querySelector('.enter__input'),
 
           // click event for done btn
           btnDone.addEventListener('click', doneCase);
-          
-          
-          
      };
 
      // click event for btn
