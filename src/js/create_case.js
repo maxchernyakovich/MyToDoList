@@ -4,9 +4,9 @@
 import {input, ulCase, ulDone, btnAdd, btnSave, btnClear } from "./variables.js";
 
 // create case 
-export const caseList = () => {
+export function caseList() {
      if (input.value === '') {
-          input.textContent = '';
+          alert('заполните поле ввода')
      } else {
           // create list item
           let li = document.createElement('li');
@@ -20,11 +20,15 @@ export const caseList = () => {
           caseText.textContent = input.value;
 
           // create btn in caseList
-          let span = document.createElement('span'),
-               btnCommit = document.createElement('button'),
-               btnDone = document.createElement('button'),
-               btnDelete = document.createElement('button'),
-               btnRenew = document.createElement('button');
+          let span = document.createElement('span');
+          let btnCommit = document.createElement('button');
+          btnCommit.classList.add('btn__commit');
+          let btnDone = document.createElement('button');
+          btnDone.classList.add('btn__done');
+          let btnDelete = document.createElement('button');
+          btnDelete.classList.add('btn__delete');
+          let btnRenew = document.createElement('button');
+          btnRenew.classList.add('btn__renew');
 
           // create img in btn 
           let iconCommit = document.createElement('img');
@@ -47,11 +51,11 @@ export const caseList = () => {
           span.append(btnDelete);
           btnDelete.append(iconDelete);
 
-          // click btn delete
+          /* // click btn delete
           let deleteCase = () => {
                li.remove();
           };
-          btnDelete.addEventListener('click', deleteCase);
+          btnDelete.addEventListener('click', deleteCase); */
      }
      input.value = '';
      
