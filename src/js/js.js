@@ -26,6 +26,24 @@ for (let i = 0; i < listCaseDelete.length; i++) {
      }
 }
 
+let listCaseDone = document.querySelectorAll('.btn__done');
+for (let i = 0; i < listCaseDone.length; i++) {
+     listCaseDone[i].onclick = function () {
+          let div = this.parentNode.parentNode;
+          div.style.display = 'none';
+     }
+}
+
+for (let i = 0; i < listCaseDone.length; i++) {
+     listCaseDone[i].onclick = function () {
+          let div = this.parentNode.parentNode;
+          div.cloneNode(true);
+          document.querySelector('.list__done').appendChild(div);
+          div.style.display = 'flex';
+     }
+}
+
+
 function newListCaseItem() {
      let input = document.querySelector('.enter__input').value;
      let li = document.createElement('li');
@@ -41,6 +59,26 @@ function newListCaseItem() {
      }
      document.querySelector('.enter__input').value = '';
      
+     let newSpan = document.createElement('span');
+     let newBtnDelete = document.createElement('button');
+     let newBtnDone = document.createElement('button');
+     let newBtnCommit = document.createElement('button');
+     newSpan.classList.add('span');
+     newBtnDelete.classList.add('btn__delete');
+     newBtnDone.classList.add('btn__done');
+     newBtnCommit.classList.add('btn__commit');
+     newSpan.append(newBtnCommit);
+     newSpan.append(newBtnDone);
+     newSpan.append(newBtnDelete);
+     li.appendChild(newSpan);
+
+     let newListCaseDelete = document.querySelectorAll('.btn__delete');
+     for (let i = 0; i < newListCaseDelete.length; i++) {
+          newListCaseDelete[i].onclick = function () {
+               let newDiv = this.parentNode.parentNode;
+               newDiv.style.display = 'none';
+          }
+     }
 }
 
 btnAdd.addEventListener('click', newListCaseItem);
