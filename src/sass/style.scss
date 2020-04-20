@@ -162,16 +162,19 @@ p {
                margin-bottom: 1rem;
                margin-left: .5rem;
 
-               span {
+               .span {
                     display: flex;
                     justify-content: center;
 
-                    button {
-                         margin-right: .2rem;
+                    .btn__delete {
+                         margin-right: .4rem;
+                         padding: 1.1rem;
                          background-color: $white_bg-color;
+                         background-image: url(../img/clear.svg);
                          border: none;
+                         cursor: pointer;
 
-                         .icon__commit {
+                         /* .icon__commit {
                               padding: 1rem;
                               background-image: url(../img/forum.svg);
                               cursor: pointer;
@@ -193,7 +196,23 @@ p {
                               padding: 1rem;
                               background-image: url(../img/autorenew.svg);
                               cursor: pointer;
-                         }
+                         } */
+                    }
+                    .btn__done {
+                         margin-right: .4rem;
+                         padding: 1.1rem;
+                         background-color: $white_bg-color;
+                         background-image: url(../img/done.svg);
+                         border: none;
+                         cursor: pointer;
+                    }
+                    .btn__commit {
+                         margin-right: .4rem;
+                         padding: 1.1rem;
+                         background-color: $white_bg-color;
+                         background-image: url(../img/forum.svg);
+                         border: none;
+                         cursor: pointer;
                     }
                }
 
