@@ -214,6 +214,14 @@ p {
                          border: none;
                          cursor: pointer;
                     }
+                    .btn__renew {
+                         margin-right: .4rem;
+                         padding: 1.1rem;
+                         background-color: $white_bg-color;
+                         background-image: url(../img/autorenew.svg);
+                         border: none;
+                         cursor: pointer;
+                    }
                }
 
                

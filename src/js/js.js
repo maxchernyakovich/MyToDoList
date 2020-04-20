@@ -1,64 +1,79 @@
 "use strict";
+// add btnAdd
 let btnAdd = document.querySelector('.enter__btn');
 
-let listCaseItem = document.querySelectorAll('.list__case .list__case--item');
-for (let i = 0; i < listCaseItem.length; i++) {
-     let span = document.createElement('span');
-     let btnDelete = document.createElement('button');
-     let btnDone = document.createElement('button');
-     let btnCommit = document.createElement('button');
-     span.classList.add('span');
-     btnDelete.classList.add('btn__delete');
-     btnDone.classList.add('btn__done');
-     btnCommit.classList.add('btn__commit');
-     span.append(btnCommit);
-     span.append(btnDone);
-     span.append(btnDelete);
-     listCaseItem[i].appendChild(span);
-};
+// add btn in listCase static item
+function ListCaseItem() {
+     let li = document.querySelectorAll('.list__case .list__case--item');
+     for (let i = 0; i < li.length; i++) {
+          let span = document.createElement('span');
+          let btnDelete = document.createElement('button');
+          let btnDone = document.createElement('button');
+          let btnCommit = document.createElement('button');
+          span.classList.add('span');
+          btnDelete.classList.add('btn__delete');
+          btnDone.classList.add('btn__done');
+          btnCommit.classList.add('btn__commit');
+          span.append(btnCommit);
+          span.append(btnDone);
+          span.append(btnDelete);
+          li[i].appendChild(span);
+     };
 
-let listCaseDelete = document.querySelectorAll('.btn__delete');
-for (let i = 0; i < listCaseDelete.length; i++) {
-     listCaseDelete[i].onclick = function() {
-          let div = this.parentNode;
-          let nextDiv = div.parentNode;
-          nextDiv.style.display = 'none';
+     // add event click in btnDelete static item
+     let listBtnDelete = document.querySelectorAll('.btn__delete');
+     for (let i = 0; i < listBtnDelete.length; i++) {
+          listBtnDelete[i].onclick = function () {
+               let div = this.parentNode.parentNode;
+               div.style.display = 'none';
+          }
      }
 }
 
-let listCaseDone = document.querySelectorAll('.btn__done');
-for (let i = 0; i < listCaseDone.length; i++) {
-     listCaseDone[i].onclick = function () {
-          let div = this.parentNode.parentNode;
-          div.style.display = 'none';
+// ad function
+ListCaseItem();
+
+// add event click in btnDone static item
+function ListDoneItem() {
+
+     // delete list item from listCase
+     let listBtnDone = document.querySelectorAll('.btn__done');
+     for (let i = 0; i < listBtnDone.length; i++) {
+          listBtnDone[i].onclick = function () {
+               let div = this.parentNode.parentNode;
+               div.style.display = 'none';
+          }
+     }
+
+     // clone list item and add in ListDone
+     for (let i = 0; i < listBtnDone.length; i++) {
+          listBtnDone[i].onclick = function () {
+               let div = this.parentNode.parentNode;
+               div.cloneNode(true);
+               document.querySelector('.list__done').appendChild(div);
+               div.style.display = 'flex';
+          }    
      }
 }
 
-for (let i = 0; i < listCaseDone.length; i++) {
-     listCaseDone[i].onclick = function () {
-          let div = this.parentNode.parentNode;
-          div.cloneNode(true);
-          document.querySelector('.list__done').appendChild(div);
-          div.style.display = 'flex';
-     }
-}
+// ad function
+ListDoneItem();
 
-
+// add event click in btnAdd 
 function newListCaseItem() {
      let input = document.querySelector('.enter__input').value;
-     let li = document.createElement('li');
-     li.classList.add('list__case--item');
-     /* let txt;
-     txt.textContent = input; */
+     let newLi = document.createElement('li');
+     newLi.classList.add('list__case--item');
      let txt = document.createTextNode(input);
-     li.append(txt);
+     newLi.append(txt);
      if (input === '') {
           alert('add a case!');
      } else {
-          document.querySelector('.list__case').appendChild(li);
+          document.querySelector('.list__case').appendChild(newLi);
      }
      document.querySelector('.enter__input').value = '';
      
+     // add btn in listCase
      let newSpan = document.createElement('span');
      let newBtnDelete = document.createElement('button');
      let newBtnDone = document.createElement('button');
@@ -70,7 +85,7 @@ function newListCaseItem() {
      newSpan.append(newBtnCommit);
      newSpan.append(newBtnDone);
      newSpan.append(newBtnDelete);
-     li.appendChild(newSpan);
+     newLi.appendChild(newSpan);
 
      let newListCaseDelete = document.querySelectorAll('.btn__delete');
      for (let i = 0; i < newListCaseDelete.length; i++) {
@@ -79,6 +94,10 @@ function newListCaseItem() {
                newDiv.style.display = 'none';
           }
      }
+
+     // ad function
+     ListDoneItem();
 }
 
+// event click addBtn
 btnAdd.addEventListener('click', newListCaseItem);
