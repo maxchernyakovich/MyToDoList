@@ -26,4 +26,21 @@ for (let i = 0; i < listCaseDelete.length; i++) {
      }
 }
 
-//btnAdd.addEventListener('click', );
+function newListCaseItem() {
+     let input = document.querySelector('.enter__input').value;
+     let li = document.createElement('li');
+     li.classList.add('list__case--item');
+     /* let txt;
+     txt.textContent = input; */
+     let txt = document.createTextNode(input);
+     li.append(txt);
+     if (input === '') {
+          alert('add a case!');
+     } else {
+          document.querySelector('.list__case').appendChild(li);
+     }
+     document.querySelector('.enter__input').value = '';
+     
+}
+
+btnAdd.addEventListener('click', newListCaseItem);
