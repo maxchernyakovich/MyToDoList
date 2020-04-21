@@ -1,16 +1,22 @@
 "use strict";
 
-// variables
-import {input, ulCase, ulDone, btnAdd, btnSave, btnClear} from "./variables.js";
+import { ListCaseItem, /* ListCaseCommit */} from "./ListCaseItem.js";
+import {ListDoneItem} from "./ListDoneItem.js";
+import {newListCaseItem} from "./newListCaseItem.js";
 
-// create case
-import {caseList} from "./create_case.js";
+// ad function
+ListCaseItem();
 
-// delete case
-import {doneList} from "./create_done.js";
+/* ListCaseCommit(); */
 
-import {deleteCase, btnDeleteCase} from "./btn_delete.js";
+// ad function
+ListDoneItem();
 
-// click event for add btn
-btnAdd.addEventListener('click', caseList);
-btnDeleteCase.addEventListener('click', deleteCase);
+// ad function
+newListCaseItem();
+
+// add btnAdd
+let btnAdd = document.querySelector('.enter__btn');
+
+// event click addBtn
+btnAdd.addEventListener('click', newListCaseItem);
