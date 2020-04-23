@@ -10,8 +10,11 @@ export function newListCaseItem() {
      newLi.classList.add('list__case--item');
      let txt = document.createTextNode(input);
      newLi.append(txt);
+
+     document.querySelector('.enter__input').style.borderColor = '';
      if (input === '') {
-          alert('add a case!');
+          /* alert('add a case!'); */
+          document.querySelector('.enter__input').style.borderColor = 'red';
      } else {
           document.querySelector('.list__case').appendChild(newLi);
      }
