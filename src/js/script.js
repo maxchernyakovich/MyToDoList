@@ -1,17 +1,17 @@
 "use strict";
 
-import { ListCaseItem} from "./ListCaseItem.js";
+//import { ListCaseItem} from "./ListCaseItem.js";
 import {ListDoneItem} from "./ListDoneItem.js";
 import {newListCaseItem} from "./newListCaseItem.js";
 import {ListCaseCommit} from "./ListCaseCommit.js";
 
 // ad function
-ListCaseItem();
+//ListCaseItem();
 
 ListCaseCommit();
 
 // ad function
-ListDoneItem();
+//ListDoneItem();
 
 // ad function
 newListCaseItem();

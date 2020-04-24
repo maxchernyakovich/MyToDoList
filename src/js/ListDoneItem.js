@@ -19,7 +19,20 @@ export function ListDoneItem() {
                div.cloneNode(true);
                document.querySelector('.list__done').appendChild(div);
                div.style.display = 'flex';
+
+               // delete btnColor in listDone
+               div.firstChild.firstChild.remove();
+               div.firstChild.firstChild.remove();
+               div.firstChild.firstChild.remove();
+
+               // delete borderColor in list item
+               if (div.style.borderColor == 'red') {
+                    div.style.borderColor = 'white';
+               } else if (div.style.borderColor == 'yellow') {
+                    div.style.borderColor = 'white';
+               } else if (div.style.borderColor == 'green') {
+                    div.style.borderColor = 'white';
+               }
           }
-          
      }
 }
