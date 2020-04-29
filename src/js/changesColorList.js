@@ -36,7 +36,4 @@ export function changesColorList(elem) {
                this.parentNode.parentNode.style.borderColor = this.parentNode.parentNode.style.borderColor === 'green' ? 'white' : 'green';
           }
      }
-
-     
-
 };

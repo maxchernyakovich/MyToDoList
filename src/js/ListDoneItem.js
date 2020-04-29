@@ -5,6 +5,9 @@ export function ListDoneItem() {
 
      // delete list item from listCase
      let listBtnDone = document.querySelectorAll('.btn__done');
+     let listBtnRenew = document.createElement('button');
+     listBtnRenew.classList.add('btn__renew');
+
      for (let i = 0; i < listBtnDone.length; i++) {
           listBtnDone[i].onclick = function () {
                let div = this.parentNode.parentNode;
@@ -18,6 +21,9 @@ export function ListDoneItem() {
                let div = this.parentNode.parentNode;
                div.cloneNode(true);
                document.querySelector('.list__done').appendChild(div);
+               //this.replaceWith(listBtnRenew);
+               this.previousSibling.remove();
+               this.remove();
                div.style.display = 'flex';
 
                // delete btnColor in listDone
@@ -35,4 +41,5 @@ export function ListDoneItem() {
                }
           }
      }
+
 }

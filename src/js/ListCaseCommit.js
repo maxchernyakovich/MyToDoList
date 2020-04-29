@@ -2,16 +2,24 @@
 
 
 export function ListCaseCommit() {
-     let listBtnCommit = document.querySelectorAll('.btn__commit');
-     for (let i = 0; i < listBtnCommit.length; i++) {
-          listBtnCommit[i].onclick = function () {
-               /* let liCommit = document.createElement('li');
-               liCommit.classList.add('list__case--item');
-               let inputCommit = document.createElement('input');
-               inputCommit.classList.add('input__commit');
-               liCommit.append(inputCommit);
-               let div = this.parentNode.parentNode;
-               div.after(liCommit); */
+
+     let btnCommit = document.querySelectorAll('.btn__commit');
+     let form = document.querySelector('.pop-ups');
+     let overlay = document.querySelector('.overlay');
+
+     let close = document.querySelector('.pop-ups__close');
+     form.append(close);
+
+
+     for (let i = 0; i < btnCommit.length; i++) {
+          btnCommit[i].onclick = function () {
+               form.style.display = "block";
+               overlay.style.display = "block";
           }
      }
+     
+     close.addEventListener('click', function () {
+          form.style.display = "none";
+          overlay.style.display = "none";
+     });
 }

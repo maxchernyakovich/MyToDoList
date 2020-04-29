@@ -3,6 +3,7 @@
 import { ListDoneItem } from "./ListDoneItem.js";
 import { ListDeleteItem } from "./ListDeleteItem.js";
 import { changesColorList } from "./changesColorList.js";
+import { ListCaseCommit } from "./ListCaseCommit.js";
 
 // add event click in btnAdd 
 export function newListCaseItem() {
@@ -28,10 +29,15 @@ export function newListCaseItem() {
      }
      document.querySelector('.enter__input').value = '';
 
+     
      // ad function
      ListDeleteItem(newLi);
      // ad function
      ListDoneItem();
      // ad function
+     ListCaseCommit();
+     // ad function
      changesColorList(spanColorBtnText);
+
+     
 }
