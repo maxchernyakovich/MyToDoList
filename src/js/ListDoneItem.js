@@ -5,8 +5,6 @@ export function ListDoneItem() {
 
      // delete list item from listCase
      let listBtnDone = document.querySelectorAll('.btn__done');
-     let listBtnRenew = document.createElement('button');
-     listBtnRenew.classList.add('btn__renew');
 
      for (let i = 0; i < listBtnDone.length; i++) {
           listBtnDone[i].onclick = function () {

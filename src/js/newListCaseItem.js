@@ -38,6 +38,4 @@ export function newListCaseItem() {
      ListCaseCommit();
      // ad function
      changesColorList(spanColorBtnText);
-
-     
 }
