@@ -333,6 +333,8 @@ p {
      }
 }
 
+                         /* ========pop-ups======== */
+
 .pop-ups {
      display: none;
      position: relative;
@@ -347,6 +349,7 @@ p {
 
      &__title {
           margin-bottom: 1rem;
+          margin-top: 1rem;
           text-align: center;
      }
 
@@ -391,11 +394,12 @@ p {
 
      &__close {
           position: relative;
-          bottom: 90px;
+          bottom: 105px;
           left: 370px;
           padding: 1.1rem;
           background-image: url(../img/clear.svg);
           background-color: $white_bg-color;
+          cursor: pointer;
      }
 }
 

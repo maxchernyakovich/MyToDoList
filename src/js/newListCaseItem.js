@@ -15,6 +15,9 @@ export function newListCaseItem() {
      let txt = document.createTextNode(input);
      spanColorBtnText.append(txt);
      newLi.append(spanColorBtnText);
+     //newLi = "id" + Math.random().toString(16).slice(2);
+     
+     
 
      // checking for empty string
      document.querySelector('.enter__input').style.borderColor = '';
@@ -26,8 +29,12 @@ export function newListCaseItem() {
           document.querySelector('.enter__btn').style.borderColor = 'red';
      } else {
           document.querySelector('.list__case').appendChild(newLi);
+          newLi.setAttribute('id', 'idCaseLi');
+          newLi.id = "idCaseLi" + Math.random().toString(16).slice(8);
      }
      document.querySelector('.enter__input').value = '';
+     
+     console.log(newLi);
 
      
      // ad function

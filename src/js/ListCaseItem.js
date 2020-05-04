@@ -17,6 +17,8 @@ export function ListCaseItem() {
           li[i].appendChild(span);
      };
 
+     
+
      // add event click in btnDelete static item
      let listBtnDelete = document.querySelectorAll('.btn__delete');
      for (let i = 0; i < listBtnDelete.length; i++) {

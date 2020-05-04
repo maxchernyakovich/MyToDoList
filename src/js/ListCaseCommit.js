@@ -7,13 +7,9 @@ export function ListCaseCommit() {
      let form = document.querySelector('.pop-ups');
      let formFlex = document.querySelector('.pop-ups__flex');
      let overlay = document.querySelector('.overlay');
-     let close = document.querySelector('.pop-ups__close');
-     /* let inputCommit = document.createElement('input');
-     inputCommit.classList.add('pop-ups__flex--input');
-     formFlex.appendChild(inputCommit); */
+     let closeForm = document.querySelector('.pop-ups__close');
+     let addForm = document.querySelector('.pop-ups__flex--btn');
      
-
-
      for (let i = 0; i < btnCommit.length; i++) {
           btnCommit[i].onclick = function () {
                form.style.display = "block";
@@ -21,8 +17,14 @@ export function ListCaseCommit() {
           }
      }
 
-     close.addEventListener('click', function () {
+     closeForm.addEventListener('click', function () {
           form.style.display = "none";
           overlay.style.display = "none";
      });
+
+     addForm.addEventListener('click', function () {
+          form.style.display = "none";
+          overlay.style.display = "none";
+     });
+     
 }
