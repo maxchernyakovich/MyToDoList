@@ -5,6 +5,7 @@ import { ListDeleteItem } from "./ListDeleteItem.js";
 import { changesColorList } from "./changesColorList.js";
 import { ListCaseCommit } from "./ListCaseCommit.js";
 
+
 // add event click in btnAdd 
 export function newListCaseItem() {
      let input = document.querySelector('.enter__input').value;
@@ -15,8 +16,6 @@ export function newListCaseItem() {
      let txt = document.createTextNode(input);
      spanColorBtnText.append(txt);
      newLi.append(spanColorBtnText);
-     //newLi = "id" + Math.random().toString(16).slice(2);
-     
      
 
      // checking for empty string
@@ -29,12 +28,10 @@ export function newListCaseItem() {
           document.querySelector('.enter__btn').style.borderColor = 'red';
      } else {
           document.querySelector('.list__case').appendChild(newLi);
-          newLi.setAttribute('id', 'idCaseLi');
           newLi.id = "idCaseLi" + Math.random().toString(16).slice(8);
      }
      document.querySelector('.enter__input').value = '';
-     
-     console.log(newLi);
+
 
      
      // ad function
@@ -45,4 +42,28 @@ export function newListCaseItem() {
      ListCaseCommit();
      // ad function
      changesColorList(spanColorBtnText);
+
+     function createNewCommit() {
+
+          let formInput = document.querySelector('.pop-ups__flex--input').value;
+          console.log(formInput);
+          let form = document.querySelector('.pop-ups');
+          let overlay = document.querySelector('.overlay');
+
+          form.style.display = "none";
+          overlay.style.display = "none";
+
+          let q = document.querySelector('.list__case--item');
+          let w = document.querySelector('.list__case--item').id;
+          let txt = document.createTextNode(formInput);
+          q.append(txt);
+          
+          console.log(q);
+          console.log(w);
+          document.querySelector('.pop-ups__flex--input').value = '';
+     }
+
+     let FormAdd = document.querySelector('.pop-ups__flex--btn');
+     FormAdd.addEventListener('click', createNewCommit);
+
 }
