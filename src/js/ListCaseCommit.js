@@ -19,6 +19,7 @@ export function ListCaseCommit() {
 let form = document.querySelector('.pop-ups');
 let overlay = document.querySelector('.overlay');
 let closeForm = document.querySelector('.pop-ups__close');
+
 closeForm.addEventListener('click', function () {
      form.style.display = "none";
      overlay.style.display = "none";

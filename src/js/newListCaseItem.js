@@ -49,23 +49,35 @@ export function newListCaseItem() {
      function createNewCommit() {
 
           let formInput = document.querySelector('.pop-ups__flex--input').value;
-          //console.log(formInput);
           let form = document.querySelector('.pop-ups');
           let overlay = document.querySelector('.overlay');
+          let btnCommit = document.querySelectorAll('.btn__commit');
+          
+          //let btnCommitParent = btnCommit[1].parentElement.parentElement.id;
+          console.log(btnCommit);
+          let newArr = [];
+
+          btnCommit.forEach(function (elem) {
+               newArr.push(elem.parentElement.parentElement.id);
+          });
+          console.log(newArr);
 
           form.style.display = "none";
           overlay.style.display = "none";
 
+          // filter arr id
+          let idLiFilter = idLi.filter(function (elem) {
+               return elem == newArr[3];
+          });
+          console.log(idLiFilter)
 
-          let q = document.querySelector(`#${idLi[5]}`);
+          let q = document.querySelector(`#${idLiFilter}`);
           let txt = document.createTextNode(formInput);
           q.append(txt);
-          console.log(idLi);
           console.log(q);
           document.querySelector('.pop-ups__flex--input').value = '';
      }
      
-
      let FormAdd = document.querySelector('.pop-ups__flex--btn');
      FormAdd.addEventListener('click', createNewCommit);
 
